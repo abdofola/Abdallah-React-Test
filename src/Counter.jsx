@@ -6,8 +6,8 @@ export default function Couner() {
   const decrement = (e) => setCount(count - 1);
 
   return (
-    <div>
-        <div>Count is: {count} </div>
+    <div className="counter">
+      <div>Count is: {count}</div>
       <button onClick={increment}>increment</button>
       <button onClick={decrement}>decrement</button>
     </div>
