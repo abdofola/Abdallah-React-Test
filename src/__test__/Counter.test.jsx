@@ -10,6 +10,7 @@ const { JSDOM } = require("jsdom");
 const { document } = new JSDOM().window;
 let container = null;
 let root = null;
+// to use act in react ^18
 global.IS_REACT_ACT_ENVIRONMENT = true;
 
 beforeAll(() => {
