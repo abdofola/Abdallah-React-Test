@@ -1,13 +1,4 @@
-import {
-  describe,
-  test,
-  it,
-  expect,
-  beforeEach,
-  afterEach,
-  beforeAll,
-  afterAll,
-} from "vitest";
+import { describe, test, expect, beforeAll, afterAll } from "vitest";
 import React from "react";
 import { createRoot } from "react-dom/client";
 import { unmountComponentAtNode } from "react-dom";
@@ -16,7 +7,7 @@ import { render } from "@testing-library/react";
 import Counter from "../Counter";
 const { JSDOM } = require("jsdom");
 
-const { document } = new JSDOM(``).window;
+const { document } = new JSDOM().window;
 let container = null;
 let root = null;
 global.IS_REACT_ACT_ENVIRONMENT = true;
@@ -54,12 +45,20 @@ describe("Counter", () => {
     const counter = container.querySelector(".counter>div:first-child");
     const increment = container.querySelector(".counter button");
     act(() => {
-      root = createRoot(container);
-      root.render(<Counter />);
       increment.click();
     });
 
-    expect(counter.textContent).toBe("Count is: 2");
+    expect(counter.textContent).toBe("Count is: 1");
   });
-  test.todo("unimplemented test");
+
+  test("decrement", () => {
+    const counter = container.querySelector(".counter>div:first-child");
+    const decrement = container.querySelector(".counter button:last-of-type");
+
+    act(() => {
+      decrement.click();
+    });
+
+    expect(counter.textContent).toBe("Count is: 0");
+  });
 });
