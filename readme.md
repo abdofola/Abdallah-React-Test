@@ -13,6 +13,11 @@ This is a react app that's built with vite tool. It's meant to walk through test
 - install [vite](https://vitejs.dev/guide/).
 - Then follow the guides to install react.
 
+# run
+- run `npm run dev` to run the app.
+- run `npm test` to run the test.
+- run `npm run ui` to see beautifully ui reports of the test. and then head to `http://127.0.0.1:51204/__vitest__/`.
+
 # Author
 - ##### Abdallha Alkaser
 
