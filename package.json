@@ -8,7 +8,8 @@
     "build": "vite build",
     "preview": "vite preview",
     "test": "vitest",
-    "coverage": "vitest run --coverage"
+    "coverage": "vitest --coverage",
+    "ui":"vitest --ui"
   },
   "dependencies": {
     "react": "^18.2.0",
