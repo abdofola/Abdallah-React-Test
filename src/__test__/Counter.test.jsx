@@ -1,7 +1,7 @@
 import { describe, test, expect, beforeAll, afterAll } from "vitest";
 import React from "react";
 import { render, fireEvent, screen } from "@testing-library/react";
-import Counter from "../Counter";
+import Counter from "../components/Counter";
 
 describe("Counter", () => {
   test("initial value", () => {

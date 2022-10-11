@@ -1,7 +1,8 @@
 import { useState } from "react";
 import reactLogo from "./assets/react.svg";
-import Counter from "./Counter";
+import Counter from "./components/Counter";
 import "./App.css";
+import Login from "./components/Login";
 
 function App() {
   return (
@@ -17,6 +18,8 @@ function App() {
       <h1>Testing React</h1>
       <div className="card">
         <Counter />
+        <hr />
+        <Login />
       </div>
     </div>
   );
