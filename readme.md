@@ -10,8 +10,7 @@ This is a react app that's built with vite tool. It's meant to walk through test
 - [react-tesing-library](https://testing-library.com/docs/react-testing-library/example-intro) for integration testing.
 
 # Prerequisites
-- install [vite](https://vitejs.dev/guide/).
-- Then follow the guides to install react.
+- clone the repo, and run `npm install`.
 
 # run
 - run `npm run dev` to run the app.
