@@ -1,5 +1,5 @@
 # Testing React App
-This is a react app that's built with vite tool. It's meant to walk through testing react components.
+This is a react app that's built with vite tool. It's meant to walk you through testing react components.
 
 # Built With
 [vite](https://vitejs.dev/guide/) is a build tool that aims to provide a faster and leaner development experience for modern web projects.
