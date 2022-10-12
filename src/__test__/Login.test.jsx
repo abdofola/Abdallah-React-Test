@@ -5,10 +5,11 @@ import userEvent from "@testing-library/user-event";
 import { faker } from "@faker-js/faker";
 import Login from "../components/Login";
 
-function buildLoginForm() {
+function buildLoginForm(overrides) {
   return {
     username: faker.internet.userName(),
     password: faker.internet.password(),
+    ...overrides
   };
 }
 describe("Login", () => {
