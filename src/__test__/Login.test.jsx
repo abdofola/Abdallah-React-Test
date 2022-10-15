@@ -9,6 +9,8 @@ import {
 import { faker } from "@faker-js/faker";
 import Login from "../components/Login";
 import LogginSubmission from "../components/LogginSubmission";
+import { server } from "../mocks/server";
+import { rest } from "msw";
 
 function buildLoginForm(overrides) {
   return {
@@ -50,6 +52,27 @@ describe("Login", () => {
     await userEvent.click(screen.getByRole("button", { name: /submit/i }));
     await waitForElementToBeRemoved(screen.getByText(/loading/i));
 
-    expect(screen.getByRole("alert").textContent).toMatchInlineSnapshot('"password required"');
+    expect(screen.getByRole("alert").textContent).toMatchInlineSnapshot(
+      '"password required"'
+    );
+  });
+
+  test("unkown server error displays the message", async () => {
+    server.use(
+      rest.post(
+        "https://jsonplaceholder.typicode.com/users",
+        async (req, res, ctx) => {
+          return res(
+            ctx.status(500),
+            ctx.json({ message: "oh, something is off" })
+          );
+        }
+      )
+    );
+    render(<LogginSubmission />);
+    await userEvent.click(screen.getByRole("button", { name: /submit/i }));
+    await waitForElementToBeRemoved(screen.getByText(/loading/i));
+
+    expect(screen.getByRole("alert").textContent).toMatchInlineSnapshot('"oh, something is off"');
   });
 });
